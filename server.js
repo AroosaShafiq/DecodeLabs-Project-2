@@ -5,6 +5,12 @@ const app = express();
 
 app.use(express.json());
 
+// Home route
+app.get("/", (req, res) => {
+  res.redirect("/api/tasks");
+});
+
+// Task routes
 app.use("/api/tasks", taskRoutes);
 
 const PORT = 5000;
